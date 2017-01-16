@@ -1,0 +1,11 @@
+user_direccion:
+    resource: "@UserBundle/Resources/config/routing/address.yml"
+    prefix:   /direccion
+
+user_personas:
+    resource: "@UserBundle/Resources/config/routing/people.yml"
+    prefix:   /personas
+
+user_homepage:
+    path:     /
+    defaults: { _controller: UserBundle:Default:index }

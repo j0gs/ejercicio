@@ -1,0 +1,31 @@
+UserBundle\Entity\People:
+    type: entity
+    table: null
+    repositoryClass: UserBundle\Repository\PeopleRepository
+    oneToOne:
+      address:
+        targetEntity: Address
+        joinColumn:
+          name: address_id
+          referencedColumnName: id
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nombre:
+            type: string
+            length: '60'
+        apePaterno:
+            type: string
+            length: '60'
+            column: ape_paterno
+        apeMaterno:
+            type: string
+            length: '60'
+            column: ape_materno
+        edad:
+            type: smallint
+    lifecycleCallbacks: {  }

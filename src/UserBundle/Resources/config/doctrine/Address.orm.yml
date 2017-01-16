@@ -1,0 +1,24 @@
+UserBundle\Entity\Address:
+    type: entity
+    table: null
+    repositoryClass: UserBundle\Repository\AddressRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        calle:
+            type: string
+            length: '80'
+        colonia:
+            type: string
+            length: '80'
+        delegacion:
+            type: string
+            length: '80'
+        numero:
+            type: string
+            length: '6'
+    lifecycleCallbacks: {  }
