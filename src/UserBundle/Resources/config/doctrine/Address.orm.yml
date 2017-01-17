@@ -2,6 +2,10 @@ UserBundle\Entity\Address:
     type: entity
     table: null
     repositoryClass: UserBundle\Repository\AddressRepository
+    oneToOne:
+      people:
+        targetEntity: People
+        mappedBy: address
     id:
         id:
             type: integer

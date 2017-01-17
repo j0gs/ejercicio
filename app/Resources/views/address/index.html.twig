@@ -7,6 +7,7 @@
         <thead>
             <tr>
                 <th>Id</th>
+                <th>Persona</th>
                 <th>Calle</th>
                 <th>Colonia</th>
                 <th>Delegacion</th>
@@ -18,6 +19,7 @@
         {% for address in addresses %}
             <tr>
                 <td><a href="{{ path('direccion_show', { 'id': address.id }) }}">{{ address.id }}</a></td>
+                <td>{{ address.people }}</td>
                 <td>{{ address.calle }}</td>
                 <td>{{ address.colonia }}</td>
                 <td>{{ address.delegacion }}</td>

@@ -35,6 +35,12 @@ class Address
     private $numero;
 
     /**
+     * One Address has One Person.
+     * @ORM\OneToOne(targetEntity="People", mappedBy="address")
+     */
+    private $people;
+
+    /**
      * Get id
      *
      * @return integer
@@ -144,5 +150,28 @@ class Address
     public function getNumero()
     {
         return $this->numero;
+    }
+
+    /**
+     * Set people
+     *
+     * @param string $people
+     * @return Address
+     */
+    public function setPeople($people)
+    {
+        $this->people = $people;
+
+        return $this;
+    }
+
+    /**
+     * Get people
+     *
+     * @return string
+     */
+    public function getPeople()
+    {
+        return $this->people;
     }
 }

@@ -36,7 +36,8 @@ class People
 
     /**
      * One Person has One Address.
-     * @ORM\OneToOne(targetEntity="Address", mappedBy="people")
+     * @ORM\OneToOne(targetEntity="Address", inversedBy="people")
+     * @ORM\JoinColumn(name="people_id", referencedColumnName="id")
      */
     private $address;
 
@@ -48,6 +49,16 @@ class People
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * __toString
+     *
+     * @return string String representation of this class
+     */
+    public function __toString()
+    {
+      return "{$this->apePaterno} {$this->apeMaterno}, {$this->nombre} ({$this->edad})";
     }
 
     /**
